@@ -6,3 +6,10 @@
     "port": "port",
     "db_name": "database_name"
 }
+
+# replace de default values with your own
+# database can be postgresql or mysql
+# host is the ip address of the database server
+# port is the port of the database server
+# db_name is the name of the database
+# AND remove the '_template' from the end of this file name and these comments
