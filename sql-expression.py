@@ -1,11 +1,16 @@
+import sql_creds
 from sqlalchemy import (
     create_engine, Table, Column, Float, ForeignKey, Integer, String, MetaData
 )
 
 # executing the instructions from our localhost "chinook" db
-# db = create_engine("postgresql:///chinook")
-# dialect+driver://username:password@host:port/database
-db = create_engine("postgresql://postgres:Enicaram22@localhost:5432/chinook")
+db = create_engine(
+    sql_creds.DATABASE + "://"
+    + sql_creds.DB_USERNAME
+    + ":" + sql_creds.DB_PASSWORD
+    + "@" + sql_creds.HOST
+    + ":" + str(sql_creds.PORT)
+    + "/" + sql_creds.DB_NAME)
 
 meta = MetaData(db)
 

@@ -1,14 +1,16 @@
+import sql_creds
 import psycopg2
 from psycopg2 import Error
 
 try: 
     # connect to "chinook" database
-    # connection = psycopg2.connect(database="chinook")
-    connection = psycopg2.connect(user="postgres",
-                                    password="Enicaram22",
-                                    host="127.0.0.1",
-                                    port="5432",
-                                    database="chinook")
+
+    connection = psycopg2.connect(
+        user=sql_creds.DB_USERNAME,
+        password=sql_creds.DB_PASSWORD,
+        host=sql_creds.HOST,
+        port=sql_creds.PORT,
+        database=sql_creds.DB_NAME)
 
     # build a cursor object of the database
     cursor = connection.cursor()
